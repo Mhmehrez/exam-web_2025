@@ -63,5 +63,7 @@ def check_role(role_names):
 from routes import routes_bp
 app.register_blueprint(routes_bp)
 
+# Add this at the end of app.py
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
